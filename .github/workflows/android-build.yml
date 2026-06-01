@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        cache: 'npm'
+        # قمنا بحذف سطر cache هنا لتفادي الخطأ تماماً
 
     - name: Install Dependencies
       run: npm install
@@ -25,7 +25,6 @@ jobs:
     - name: Build Web Assets
       run: npm run build
 
-    # هذا الأمر يقوم بإنشاء مجلد الأندرويد وتحديثه بكود الويب
     - name: Sync Capacitor Android
       run: |
         npx cap add android || true
